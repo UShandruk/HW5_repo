@@ -20,19 +20,23 @@ public class Main {
         System.out.println("Задача 2");
 
         int clientOS2 = 1; //0 — iOS, 1 — Android
-        int year2 = 2000;
+        int clientDeviceYear = 2000;
 
-        if(clientOS2 == 1)
+        if(clientOS2 == 1 && clientDeviceYear >= 2015)
         {
-            if(year2<2015)
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            else System.out.println("Установите версию приложения для Android по ссылке");
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
-        else
+        else if(clientOS2 == 1 && clientDeviceYear < 2015)
         {
-            if(year2<2015)
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            else System.out.println("Установите версию приложения для iOS по ссылке");
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        }
+        else if(clientOS2 == 0 && clientDeviceYear >= 2015)
+        {
+             System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        else // if(clientOS2 == 0 && clientDeviceYear < 2015) // оставшийся вариант можно не проверять
+        {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         }
         System.out.println("");
 
